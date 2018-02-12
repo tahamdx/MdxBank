@@ -10,12 +10,34 @@ package mdxbank;
  * @author Mohammed
  */
 public class MDXBank {
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        // TODO code application logic here
-    }
+    private long accountNo;
+    private double accountBalance;
     
+    public MDXBank(long accountNo, double accountBalance)
+        {
+        this.accountNo = accountNo;
+        this.accountBalance = accountBalance;
+        }
+    
+    public long getAccountNo()
+        {
+        return this.accountNo;
+        }
+
+    public double getAccountBalance()
+        {
+        return this.accountBalance;
+        }
+    
+    public void deposit(double value, User u)
+        {
+         System.out.println("The user " + u.name + " deposits an amount " + value);
+         accountBalance = accountBalance + value;
+        }
+    
+    public void withdraw(double value, User u)
+        {
+         System.out.println("The user " + u.name + " withdraws an amount " + value);
+         accountBalance = accountBalance - value;
+        }
 }
